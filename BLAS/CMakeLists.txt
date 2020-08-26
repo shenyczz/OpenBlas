@@ -1,0 +1,46 @@
+# CMakelists.txt
+# 
+
+# cmake 最低版本需求
+cmake_minimum_required(VERSION 2.8)
+
+# 策略
+cmake_policy(SET CMP0048 NEW)
+
+# 项目名称
+project(blas
+        VERSION "0.0.3.31786"
+        HOMEPAGE_URL "https://github.com/shenyczz/openblas"
+        DESCRIPTION "项目演示...")
+
+message("")
+message("项目名称: " ${PROJECT_NAME})
+message(STATUS "版本: " ${PROJECT_VERSION})
+message(STATUS "版本: " ${PROJECT_HOMEPAGE_URL})
+message(STATUS "描述: " ${PROJECT_DESCRIPTION})
+message("")
+
+add_subdirectory(SRC)
+
+
+# 指定生成目标(这里是可执行文件)
+# add_executable(${PROJECT_NAME} blas.cpp)
+
+# 
+# message([STATUS|WARNING|AUTHOR_WARNING|FATAL_ERROR|SEND_ERROR] "message to display" ...)
+# 
+# (无) = 重要消息；
+#  STATUS = 非重要消息；
+#  WARNING = CMake 警告, 会继续执行；
+#  AUTHOR_WARNING = CMake 警告 (dev), 会继续执行；
+#  SEND_ERROR = CMake 错误, 继续执行，但是会跳过生成的步骤；
+#  FATAL_ERROR = CMake 错误, 终止所有处理过程；
+
+# message("重要消息")
+# message(STATUS "状态消息")
+# message(WARNING "警告消息, 会继续执行")
+# message(AUTHOR_WARNING "权威警告消息, 会继续执行")
+# message(SEND_ERROR "错误消息, 继续执行，但是会跳过生成的步骤")
+# message(FATAL_ERROR "致命错误消息, 终止所有处理过程")
+
+

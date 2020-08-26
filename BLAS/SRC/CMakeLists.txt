@@ -25,6 +25,10 @@
 #
 #######################################################################
 
+cmake_minimum_required(VERSION 2.8)
+project(src)
+
+
 #---------------------------------------------------------
 #  Level 1 BLAS
 #---------------------------------------------------------
@@ -51,15 +55,18 @@ set(SBLAS3 sgemm.f ssymm.f ssyrk.f ssyr2k.f strmm.f strsm.f)
 #---------------------------------------------------------------------
 #  Auxiliary routines needed by both the Level 2 and Level 3 BLAS
 #---------------------------------------------------------------------
-set(ALLBLAS lsame.f xerbla.f xerbla_array.f)
+set(ALLBLAS allblas/lsame.f allblas/xerbla.f allblas/xerbla_array.f)
 
-# ???
+# 设置源代码
 set(SOURCES)
-if(BUILD_SINGLE)
-  list(APPEND SOURCES ${SBLAS1} ${ALLBLAS} ${SBLAS2} ${SBLAS3})
-endif()
+# if(BUILD_SINGLE)
+#   list(APPEND SOURCES ${SBLAS1} ${ALLBLAS} ${SBLAS2} ${SBLAS3})
+# endif()
 
+list(APPEND SOURCES ${ALLBLAS})
+message(STATUS "SOURCES: " ${SOURCES})
 
+add_library(blas/src ${SOURCES})
 
 
 

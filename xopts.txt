@@ -1,0 +1,10 @@
+# linux
+
+
+
+# windows
+cmake main -B"out/main" -G"MinGW Makefiles"
+cmake blas -B"out/blas" -G"MinGW Makefiles"
+
+cmake fdemo -B"out/fdemo" -G"MinGW Makefiles"
+
