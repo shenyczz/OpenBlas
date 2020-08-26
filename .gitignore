@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Folder
+[Bb]uild
+[Oo]ut
+[Oo]utput
+[Tt]emp
